@@ -1,3 +1,5 @@
+#trend Trading Strategy
+
 import requests
 from config import client_id
 
