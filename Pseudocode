@@ -6,6 +6,43 @@ Step 1:
 If price is above 9 Day EMA take trade
     Price = Ask Price = < 9EMA price.
 
+    Stocks that are in play
+    Requirements:
+    if pervious candle stick is above 9 day moving average and current candle is also above 9 day moving average price.
+    purchase market order
+    Market Price ()
+    9 day exponential moving averages
+    pervious candle
+
+
+
+#Simple moving average
+SMA = ( Sum ( Price, 9 ) ) / 9
+#n = time period
+we are going to need to gather historicaldata from the past 9 days closes
+
+
+
+
+#buy
+{
+  "orderType": "MARKET",
+  "session": "NORMAL",
+  "duration": "DAY",
+  "orderStrategyType": "SINGLE",
+  "orderLegCollection": [
+    {
+      "instruction": "Buy",
+      "quantity": 15,
+      "instrument": {
+        "symbol": "XYZ",
+        "assetType": "EQUITY"
+      }
+    }
+  ]
+}
+
+
     EMA equation is 
         EMA(today) = (Value today* (smoothing 1 + days )) + EMA yesterday * (1-(smoothing/1+days);
 
