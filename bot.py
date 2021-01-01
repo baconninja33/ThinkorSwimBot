@@ -2,10 +2,13 @@
 #this is using paper wallet
 
 #import alpaca_trade_api as tradeapi
-import pip._vendor.requestsfrom config import *
+import requests
+from config import *
 BASE_URL = "https://paper-api.alpaca.markets"
+ACCOUNT_URL = "{}/v2/account".format(BASE_URL)
+ORDERS_URL = "{}/v2/orders".format(BASE_URL)
 
-r = requests.get(BASE_URL)
+r = requests.get(account_url, headers={'APCA-API-KEY-ID':API_KEY, 'APCA-API-SECRET-KEY': SECRET_KEY})
 
 print(r.content)
 
